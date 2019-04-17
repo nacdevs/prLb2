@@ -10,7 +10,20 @@ namespace WformEj31
   {
     private PuestoAtencion caja;
     private Queue<Cliente> clientes;
+    private Cliente cliente;
     private string nombre;
+
+    internal Cliente Cliente
+    {
+      get
+      {
+        return clientes.Dequeue();
+      }
+      set
+      {
+
+      }
+    }
 
     private Negocio() { }
 
@@ -19,11 +32,12 @@ namespace WformEj31
       this.nombre = nombre;
     }
 
-    public static bool operator !=(Negocio n, Cliente c) {
+    public static bool operator !=(Negocio n, Cliente c)
+    {
       bool ret = true;
-      foreach(Cliente cliente in n.clientes)
+      foreach (Cliente cliente in n.clientes)
       {
-        if(cliente == c)
+        if (cliente == c)
         {
           ret = false;
           break;
@@ -47,5 +61,28 @@ namespace WformEj31
       return ret;
     }
 
+
+
+    public static bool operator +(Negocio n, Cliente c)
+    {
+      bool ret = false;
+      if (n != c) {
+        n.clientes.Enqueue(c);
+        ret = true;
+      }
+
+      return ret;
+    }
+
+    public static bool operator ~(Negocio n) {
+      bool ret = false;
+      Cliente c =n.clientes.Dequeue();
+      PuestoAtencion pa = new PuestoAtencion();
+      if (pa.Atender(c)) {
+        ret = true;
+      }
+      
+      return ret;
+    }
   }
 }
