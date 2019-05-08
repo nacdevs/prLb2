@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class PlacaVideo:Periferico
+    public class PlacaVideo:Periferico
     {
         private int ramMB;
-
+        
         public PlacaVideo(string marca, string modelo, EConector conector,int ramMB) : base(marca, modelo, conector)
         {
             this.ramMB = ramMB;
         }
+
+
 
 
         public override string ExponerDatos()

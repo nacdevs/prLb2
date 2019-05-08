@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    enum EConector
+    public enum EConector
     {
         PCIExpress,USB,MiniUSB,MicroUSB,PS2
     }

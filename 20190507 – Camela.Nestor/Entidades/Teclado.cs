@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Teclado : Periferico
+    public class Teclado : Periferico
     {
         private EDistribucion distribucion;
         public Teclado(string marca, string modelo, EConector conector) : base(marca, modelo, conector)

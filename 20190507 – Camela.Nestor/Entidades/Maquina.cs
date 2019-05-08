@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Maquina
+    public class Maquina
     {
-        private int cantidadMaxPerifericos;
+        
         private string nombre;
         private string systemInfo;
         private List<Periferico> perifericos;
 
         public int CantidadMaxPerifericos {
-            get { return this.cantidadMaxPerifericos; }
+            
             set {
                     if (value > 1 && value < 4) {
-                        cantidadMaxPerifericos = value;
+                        CantidadMaxPerifericos = value;
                     }
                     else
                     {
-                        cantidadMaxPerifericos = 1;
+                        CantidadMaxPerifericos = 1;
                     }
                  }
         }
@@ -38,14 +38,14 @@ namespace Entidades
                 return sb.ToString();
             }  }
 
-        private Maquina() {
+        public Maquina() {
             perifericos = new List<Periferico>();
             this.cantidadMaxPerifericos = 3;
         }
 
         
 
-        private Maquina(string nombre):this() {
+        public Maquina(string nombre):this() {
             this.nombre = nombre;
         }
 

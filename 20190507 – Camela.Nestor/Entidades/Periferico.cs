@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    abstract class Periferico
+    public abstract class Periferico
     {
         private EConector conector;
         private string marca;

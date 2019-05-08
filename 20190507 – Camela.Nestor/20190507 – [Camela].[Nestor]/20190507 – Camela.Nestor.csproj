@@ -50,6 +50,9 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{c20790c7-73fd-4196-9c64-85f2a85de3db}</Project>
       <Name>Entidades</Name>
