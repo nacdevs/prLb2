@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentralTelefonica
 {
-    class Llamada
+    public class Llamada
     {
         private float duracion;
         private string nroDestino;
@@ -45,7 +45,7 @@ namespace CentralTelefonica
             }
             return ret;
         }
-        public enum tipoLlamada
+        public enum TipoLlamada
         {
             Local,Provincial,Todas
         }

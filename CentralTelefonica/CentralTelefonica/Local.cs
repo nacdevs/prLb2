@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CentralTelefonica
 {
-    class Local:Llamada
+    public class Local:Llamada
     {
         protected float costo;        
         
@@ -18,12 +18,12 @@ namespace CentralTelefonica
             }
         }
 
-    public Local(Llamada llamada, float costo):this(llamada.Duracion,llamada.NroDestino,llamada.NroOrigen,costo)
+    public Local(Llamada llamada, float costo):this(llamada.NroOrigen, llamada.Duracion,llamada.NroDestino,costo)
         {
             this.costo = costo;
         }
 
-        public Local(float duracion, string nroDestino, string nroOrigen, float costo) : base(duracion, nroDestino, nroOrigen)
+        public Local(string nroOrigen, float duracion, string nroDestino, float costo) : base(duracion, nroDestino, nroOrigen)
         {
             this.costo = costo;
         }
