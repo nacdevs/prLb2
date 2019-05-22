@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CentralTelefonica
+namespace CentralTelefonica2ElectricBoogaloo
 {
     public class Local:Llamada
     {
@@ -34,13 +34,28 @@ namespace CentralTelefonica
             return base.Duracion*this.costo;
         }
 
-        public override string Mostrar()
+        protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Duracion:" + base.Duracion);
             sb.AppendLine("Nro Destino:" + base.NroDestino);
             sb.AppendLine("Nro Origen:" + base.NroOrigen);
+            sb.AppendFormat("Costo llamada:{0}", CostoLlamada);
             return sb.ToString();
+        }
+
+        public bool Equals(object obj)
+        {   
+            if(obj is Local)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override string ToString()
+        {
+            return Mostrar();
         }
     }
 }

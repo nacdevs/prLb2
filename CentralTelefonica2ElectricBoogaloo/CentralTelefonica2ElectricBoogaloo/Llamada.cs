@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CentralTelefonica
+namespace CentralTelefonica2ElectricBoogaloo
 {
-    public class Llamada
+    public abstract class Llamada
     {
-        private float duracion;
-        private string nroDestino;
-        private string nroOrigen;
+        protected float duracion;
+        protected string nroDestino;
+        protected string nroOrigen;
 
         public Llamada(float duracion, string nroDestino, string nroOrigen)
         {
@@ -23,7 +23,7 @@ namespace CentralTelefonica
         public string NroDestino { get => nroDestino; }
         public string NroOrigen { get => nroOrigen; }
 
-        public virtual string Mostrar()
+        protected virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Duracion:"+this.duracion);
@@ -48,6 +48,15 @@ namespace CentralTelefonica
         public enum TipoLlamada
         {
             Local,Provincial,Todas
+        }
+
+        public static bool operator ==(Llamada l1, Llamada l2) {
+            return false;
+        }
+
+        public static bool operator !=(Llamada l1, Llamada l2)
+        {
+            return false;
         }
     }
 }
