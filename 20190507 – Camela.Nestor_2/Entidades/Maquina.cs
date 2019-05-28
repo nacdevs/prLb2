@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,27 +10,31 @@ namespace Entidades
     {
         
         private string nombre;
+        private int cantidadMaxPerifericos;
         private string systemInfo;
         private List<Periferico> perifericos;
 
-        public int CantidadMaxPerifericos {
-            
-            set {
-                    if (value > 1 && value < 4) {
-                        CantidadMaxPerifericos = value;
-                    }
-                    else
-                    {
-                        CantidadMaxPerifericos = 1;
-                    }
-                 }
-        }
+        public int CantidadMaximaPerifericos {
+                            set {
+                              if (value > 1 && value < 4) {
+                                cantidadMaxPerifericos = value;
+                              }
+                              else
+                              {
+                                cantidadMaxPerifericos = 1;
+                              }
+                            }
+                             get {
+                              return cantidadMaxPerifericos;
+                            }
+                        }
+
         public string Nombre { get => nombre; set => nombre = value; }
         public string SystemInfo { get {
                 StringBuilder sb = new StringBuilder();
                 sb.Append(this.nombre);
                 sb.Append(this.perifericos);
-                sb.Append(this.cantidadMaxPerifericos.ToString());
+                sb.Append(cantidadMaxPerifericos.ToString());
                 for (int i = 0; i < perifericos.Count(); i++)
                 {
                     sb.Append(perifericos[i].ExponerDatos());

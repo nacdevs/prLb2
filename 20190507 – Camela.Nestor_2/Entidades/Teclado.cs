@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,7 @@ namespace Entidades
         private EDistribucion distribucion;
         public Teclado(string marca, string modelo, EConector conector) : base(marca, modelo, conector)
         {
+          this.distribucion = EDistribucion.Dvorak;
         }
 
         public Teclado(string marca, string modelo, EConector conector, EDistribucion distribucion) : base(marca, modelo, conector)
@@ -22,7 +23,10 @@ namespace Entidades
 
         public override string ExponerDatos()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(base.ExponerDatos());
+            sb.AppendFormat("Distribucion:{0}", this.distribucion);
+            return sb.ToString();
         }
 
         public enum EDistribucion {

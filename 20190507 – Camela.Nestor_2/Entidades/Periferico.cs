@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +22,12 @@ namespace Entidades
 
 
 
-        public abstract string ExponerDatos();
+        public virtual string ExponerDatos()
+        {
+          StringBuilder sb = new StringBuilder();
+          sb.AppendFormat("Marca:{0}, Modelo:{1}, Conector:{2}", marca, modelo, conector);
+          return sb.ToString();
+        }
         
 
         public static bool operator !=(Periferico p1, Periferico p2) {
