@@ -11,6 +11,7 @@ namespace CentralTelefonica2ElectricBoogaloo
         protected float duracion;
         protected string nroDestino;
         protected string nroOrigen;
+        
 
         public Llamada(float duracion, string nroDestino, string nroOrigen)
         {
@@ -22,6 +23,7 @@ namespace CentralTelefonica2ElectricBoogaloo
         public float Duracion { get => duracion; }
         public string NroDestino { get => nroDestino; }
         public string NroOrigen { get => nroOrigen; }
+        //public abstract float CostoLlamada;
 
         protected virtual string Mostrar()
         {
